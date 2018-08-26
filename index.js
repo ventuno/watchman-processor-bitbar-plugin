@@ -1,6 +1,6 @@
 #!/usr/bin/env /usr/local/bin/node
 
-process.env.PATH = '/usr/local/bin/';
+process.env.PATH = '/usr/local/bin/:/usr/bin/';
 process.title = 'watchman-processor-bitbar-plugin';
 const { processor } = require('watchman-processor');
 const notifier = require('node-notifier');
@@ -13,7 +13,7 @@ if (watchman && typeof watchman.start === 'function') {
    console.log(':skull:');
   });
   watchman.emitter.on('setState', function (params) {
-   switch(params.status) {
+   switch(params.state) {
      case 'good':
        notifier.notify('👍');
        console.log(':+1:');
