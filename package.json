@@ -1,15 +1,27 @@
 {
-  "name": "watchman-processor-bitbar-plugin",
+  "name": "watchman-processor-tray-icon",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha tests/",
+    "test:watch": "mocha --watch --inspect --debug-brk tests/",
+    "format": "prettier-eslint --write \"./*.js ./**/*.js\"",
+    "lint": "eslint .",
+    "start": "electron ."
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "node-notifier": "^5.2.1",
-    "watchman-processor": "2.3.0"
+    "watchman-processor": "file:../watchman-processor"
+  },
+  "devDependencies": {
+    "eslint": "^5.4.0",
+    "eslint-plugin-mocha": "^5.2.0",
+    "chai": "^4.1.2",
+    "electron": "^2.0.8",
+    "eslint-config-google": "^0.9.1",
+    "mocha": "^5.2.0",
+    "prettier-eslint-cli": "^4.7.1",
+    "sinon": "^6.1.5"
   }
 }
